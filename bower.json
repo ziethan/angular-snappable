@@ -1,0 +1,10 @@
+{
+    "name": "angular-snappable",
+    "version": "0.1.0",
+    "main": [
+        "angular-snappable.js"
+    ],
+    "dependencies": {
+        "snapjs": "latest"
+    }
+}
