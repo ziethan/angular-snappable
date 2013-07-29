@@ -1,5 +1,3 @@
-var angular = {};
-
 angular.module('snap', [])
 
 .directive('snappable', function() {
