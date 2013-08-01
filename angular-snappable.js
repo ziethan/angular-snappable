@@ -1,19 +1,23 @@
 angular.module('snap', [])
 
-.directive('snappable', function() {
+.directive('snappable', function(isMobile) {
     "use strict";
     return {
         restrict: 'E'
       , scope: {
             disable: '@'
+          , touchToDrag: '@'
         }
       , controller: function($scope, $q) {
             $scope.defer = $q.defer();
             return $scope.defer.promise;
         }
       , link : function(scope, elem, attrs, ctrl) {
+            console.log('isMobile', isMobile);
             var snappable = new window.Snap({
                 element: elem.find('.snap-content')[0]
+              , disable: attrs.disable || ''
+              , touchToDrag: isMobile || false
             });
             scope.defer.resolve(snappable);
         }
