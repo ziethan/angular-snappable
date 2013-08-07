@@ -13,7 +13,6 @@ angular.module('snap', [])
             return $scope.defer.promise;
         }
       , link : function(scope, elem, attrs, ctrl) {
-            console.log('isMobile', isMobile);
             var snappable = new window.Snap({
                 element: elem.find('.snap-content')[0]
               , disable: attrs.disable || ''
